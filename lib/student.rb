@@ -84,8 +84,12 @@ class Student
       SELECT * FROM students WHERE grade = 10 LIMIT ?;
       SQL
     
+    ret_array = []
+    
     DB[:conn].execute(sql, x).map do |row|
       ret_array.append(self.new_from_db(row))
     end
+    
+    ret_array
   end
 end
