@@ -86,7 +86,7 @@ class Student
     
     ret_array = []
     
-    DB[:conn].execute(sql).map do |row|
+    DB[:conn].execute(sql, x).map do |row|
       ret_array.append(self.new_from_db(row))
     end
     
