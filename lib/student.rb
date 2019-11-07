@@ -11,7 +11,7 @@ class Student
   def self.all
     sql = <<-SQL
       SELECT *
-      FROM songs
+      FROM studnets
     SQL
  
     DB[:conn].execute(sql).map do |row|
@@ -22,7 +22,7 @@ class Student
   def self.find_by_name(name)
     sql = <<-SQL
       SELECT *
-      FROM songs
+      FROM students
       WHERE name = ?
       LIMIT 1
     SQL
